@@ -1,0 +1,14 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: latest
+    commands:
+      - npm install -g cypress
+  pre_build:
+    commands:
+      - npm install
+  build:
+    commands:
+      npx cypress run --headed --spec C:\Users\edwin.chavarro\Documents\Maira\automatizacionCypress\cypress\e2e\test

@@ -1,0 +1,37 @@
+{
+  "name": "automatizacioncypress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "Limpiar-reporte": "rimraf ./allure-report && rimraf ./allure-results",
+    "Ejecutar-pruebas": " cypress run --headed --env allure=true",
+    "Generar-reporte": "allure generate allure-results -o allure-report --clean",
+    "Abrir-reporte": "allure serve allure-results && \"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" allure-report/index.html",
+    "test": "npm run Limpiar-reporte && npm run Ejecutar-pruebas && npm run Generar-reporte && npm run Abrir-reporte",
+    "cypress:run": "cypress run --reporter cypress-allure-plugin/reporter"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^2.40.0",
+    "cypress": "^12.13.0",
+    "cypress-xpath": "^2.0.1",
+    "open": "^9.1.0",
+    "parallel": "^1.2.0"
+  },
+  "defaultCommandTimeout": 10000,
+  "execTimeout": 10000,
+  "env": {
+    "browser": "chrome"
+  },
+  "chromeWebSecurity": false,
+  "chromeArgs": [
+    "--disable-web-security",
+    "--disable-site-isolation-trials"
+  ],
+  "dependencies": {
+    "allure-commandline": "^2.24.0"
+  }
+}
