@@ -1,0 +1,57 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Clona el repositorio de tu proyecto desde Git
+                checkout scm
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                // Instala las dependencias de Cypress
+                sh 'npm install'
+            }
+        }
+
+        stage('Run Cypress Tests') {
+            steps {
+                // Ejecuta las pruebas de Cypress en modo cabezaless
+                sh 'npx cypress run --headless'
+            }
+        }
+
+        stage('Publish Allure Report') {
+            steps {
+                // Genera el informe Allure
+                sh 'npx allure generate allure-results -o allure-report'
+                
+                // Publica el informe HTML en Jenkins
+                publishHTML(
+                    target: [
+                        allowMissing: false,
+                        alwaysLinkToLastBuild: false,
+                        keepAll: true,
+                        reportDir: 'allure-report',
+                        reportFiles: 'index.html',
+                        reportName: 'Cypress Test Report'
+                    ]
+                )
+            }
+        }
+    }
+
+    post {
+        success {
+            // Envía notificaciones o realiza acciones adicionales si la construcción tiene éxito
+            echo 'Las pruebas de Cypress se ejecutaron con éxito.'
+        }
+
+        failure {
+            // Envía notificaciones o realiza acciones adicionales en caso de fallo
+            echo 'Las pruebas de Cypress fallaron. Se requiere atención.'
+        }
+    }
+}
