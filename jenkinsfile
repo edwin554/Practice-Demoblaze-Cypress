@@ -19,7 +19,7 @@ pipeline {
         stage('Run Cypress Tests') {
             steps {
                 // Ejecuta las pruebas de Cypress en modo cabezaless
-                sh 'npx cypress run --headless'
+                sh 'npx cypress run --browser chrome --spec cypress/e2e/test'
             }
         }
 
