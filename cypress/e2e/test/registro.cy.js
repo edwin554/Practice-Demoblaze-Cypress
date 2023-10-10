@@ -8,6 +8,7 @@ import { Logger } from "../utils/logger";
 const user = MethodsCommonPages.generateRandomStringh();
 const passWord= MethodsCommonPages.generateRandomStringh();
 const existingUser = LoginData.validCredentials.username;
+const existingPassword = LoginData.validCredentials.password;
 
 describe(DataCommonPage.testSuites.registro, () => {
     it('Registro usuario valido', () => {
@@ -22,8 +23,8 @@ describe(DataCommonPage.testSuites.registro, () => {
         Logger.stepNumber(3);
         Logger.step(' Completar algunos campos con información inválida.');
         cy.get('#signInModal > .modal-dialog > .modal-content > .modal-footer').should('be.visible');
-        SignUpMethods.insertUsername(user);
-        SignUpMethods.insertPassword(passWord);
+        SignUpMethods.insertUsername(existingUser);
+        SignUpMethods.insertPassword(existingPassword);
         SignUpMethods.clickSignUpModal();
         
         

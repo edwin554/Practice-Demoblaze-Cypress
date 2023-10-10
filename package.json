@@ -15,9 +15,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
     "@shelex/cypress-allure-plugin": "^2.40.0",
-    "cypress": "^12.13.0",
+    "cypress": "^12.17.4",
+    "cypress-cucumber-preprocessor": "^4.3.1",
     "cypress-xpath": "^2.0.1",
+    "esbuild": "^0.19.4",
     "open": "^9.1.0",
     "parallel": "^1.2.0"
   },
@@ -32,6 +35,9 @@
     "--disable-site-isolation-trials"
   ],
   "dependencies": {
-    "allure-commandline": "^2.24.0"
+    "@badeball/cypress-cucumber-preprocessor": "^15.0.0",
+    "@shelex/cypress-allure-plugin": "^2.34.0",
+    "allure-commandline": "^2.24.0",
+    "multiple-cucumber-html-reporter": "^3.0.1"
   }
 }
