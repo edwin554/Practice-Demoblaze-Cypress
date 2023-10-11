@@ -1,0 +1,8 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Wed Oct 11 00:06:13 COT 2023","Wed Oct 11 00:06:25 COT 2023","11769","","Catalogo y compras","","","","Navegación por categorías",""
+"passed","Wed Oct 11 00:06:59 COT 2023","Wed Oct 11 00:07:01 COT 2023","2264","","Registro","","","","Registro usuario valido",""
+"passed","Wed Oct 11 00:07:01 COT 2023","Wed Oct 11 00:07:03 COT 2023","1175","","Registro","","","","Registro usuario invalido",""
+"passed","Wed Oct 11 00:06:30 COT 2023","Wed Oct 11 00:06:47 COT 2023","16681","","Catalogo y compras","","",""," Realizar una compra",""
+"skipped","Wed Oct 11 00:06:06 COT 2023","Wed Oct 11 00:06:06 COT 2023","6","","Autenticacion","","",""," Inicio de sesión inválido",""
+"passed","Wed Oct 11 00:06:25 COT 2023","Wed Oct 11 00:06:30 COT 2023","5262","","Catalogo y compras","","","","Agregar producto al carrito",""
+"passed","Wed Oct 11 00:06:01 COT 2023","Wed Oct 11 00:06:06 COT 2023","4211","","Autenticacion","","","","Inicio de sesion exitoso",""
