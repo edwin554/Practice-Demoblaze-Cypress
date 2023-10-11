@@ -23,8 +23,8 @@ describe(DataCommonPage.testSuites.registro, () => {
         Logger.stepNumber(3);
         Logger.step(' Completar algunos campos con información inválida.');
         cy.get('#signInModal > .modal-dialog > .modal-content > .modal-footer').should('be.visible');
-        SignUpMethods.insertUsername(existingUser);
-        SignUpMethods.insertPassword(existingPassword);
+        SignUpMethods.insertUsername(user);
+        SignUpMethods.insertPassword(passWord);
         SignUpMethods.clickSignUpModal();
         
         
